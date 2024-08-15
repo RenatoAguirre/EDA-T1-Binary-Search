@@ -82,7 +82,8 @@ void run_and_time_sequential_search(const int DICTIONARY_SIZE, std::string query
 {
   /* get dictionary */
   
-  std::string dictionary_array[DICTIONARY_SIZE];
+  std::string* dictionary_array = new std::string[DICTIONARY_SIZE];
+
   const std::string filename = "../data/D" + std::to_string(DICTIONARY_SIZE) + ".txt";
   std::cout << "reading from file: " << filename << std::endl;
   read_file_and_insert_into_array(filename, dictionary_array, DICTIONARY_SIZE);
@@ -96,13 +97,15 @@ void run_and_time_sequential_search(const int DICTIONARY_SIZE, std::string query
   auto end = std::chrono::high_resolution_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
   std::cout << "Sequential search done in: " << duration.count() << " milliseconds" << std::endl;
+
+  delete[] dictionary_array;
 }
 
 void run_and_time_binary_search(const int DICTIONARY_SIZE, std::string query_array[])
 {
   /* get dictionary */
   
-  std::string dictionary_array[DICTIONARY_SIZE];
+  std::string* dictionary_array = new std::string[DICTIONARY_SIZE];
   const std::string filename = "../data/D" + std::to_string(DICTIONARY_SIZE) + ".txt";
   //std::cout << "reading from file: " << filename << std::endl;
   read_file_and_insert_into_array(filename, dictionary_array, DICTIONARY_SIZE);
@@ -127,6 +130,8 @@ void run_and_time_binary_search(const int DICTIONARY_SIZE, std::string query_arr
   auto end = std::chrono::high_resolution_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
   std::cout << "search done in " << duration.count() << " milliseconds" << std::endl;
+
+  delete[] dictionary_array;
 }
 
 
@@ -139,7 +144,7 @@ int main ()
   std::string* query_array = new std::string[QUERY_SIZE];
   get_queries(query_array);
   std::cout << "Queries read" << std::endl;
-  std::cout << " setup. done \n" << std::endl;
+  std::cout << "Setup done. \n" << std::endl;
 
   /*10000*/
   /* run binary search */
