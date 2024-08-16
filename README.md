@@ -7,7 +7,7 @@ Debes estar en el directorio src
 
 $ cd src
 
-$ g++ -o out main.cpp algorithms.cpp
+$ g++ -o out main.cpp algorithms.cpp -std=c++11
 
 Para correr el programa
 
