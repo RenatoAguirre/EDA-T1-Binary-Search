@@ -39,6 +39,15 @@ void get_queries(std::string query_array[])
   read_file_and_insert_into_array("../data/Nc.txt", query_array, SIZE);
 }
 
+
+/*
+  * We search the query array in the dictionary array using the sequential search algorithm
+  * we also count how many finds we had and how many words were not found
+  * @params std::string dictionary[]: the array of strings to search
+  * @params std::string query_array[]: the array of strings to search for
+  * @params int size: the size of the dictionary array
+  * @return void
+*/
 void search_in_dictionary_sequential(std::string dictionary[], std::string query_array[], int size)
 { 
   int found = 0;
@@ -58,6 +67,14 @@ void search_in_dictionary_sequential(std::string dictionary[], std::string query
   std::cout << "Sequential search: " << found << " found, " << not_found << " not found" << std::endl;
 }
 
+/*
+  * We search the query array in the dictionary array using the binary search algorithm
+  * we also count how many finds we had and how many words were not found
+  * @params std::string dictionary[]: the array of strings to search
+  * @params std::string query_array[]: the array of strings to search for
+  * @params int size: the size of the dictionary array
+  * @return void
+*/
 void search_in_dictionary_binary(std::string dictionary[], std::string query_array[], int size)
 {
   int found = 0;
@@ -77,7 +94,13 @@ void search_in_dictionary_binary(std::string dictionary[], std::string query_arr
   std::cout << "Binary search: " << found << " found, " << not_found << " not found" << std::endl;
 }
 
-
+/* 
+  * this functions reads the dictionary file and stores it in an array
+  * then it runs the sequential search algorithm and times it 
+  * @params int DICTIONARY_SIZE: the size of the dictionary array
+  * @params std::string query_array[]: the array of strings to search for
+  * @return void
+*/
 void run_and_time_sequential_search(const int DICTIONARY_SIZE, std::string query_array[])
 {
   /* get dictionary */
@@ -101,6 +124,14 @@ void run_and_time_sequential_search(const int DICTIONARY_SIZE, std::string query
   delete[] dictionary_array;
 }
 
+/* 
+  * this functions reads the dictionary file and stores it in an array
+  * then it runs the binary search algorithm and times it 
+  * also it times the sorting of the dictionary array separately
+  * @params int DICTIONARY_SIZE: the size of the dictionary array
+  * @params std::string query_array[]: the array of strings to search for
+  * @return void
+*/
 void run_and_time_binary_search(const int DICTIONARY_SIZE, std::string query_array[])
 {
   /* get dictionary */
@@ -134,7 +165,12 @@ void run_and_time_binary_search(const int DICTIONARY_SIZE, std::string query_arr
   delete[] dictionary_array;
 }
 
-
+/*
+  * Main function
+  * runs the binary search and sequential search algorithms with different sizes of dictionaries and logs the time it took to run
+  * @params void
+  * @return int
+*/
 int main ()
 {
   /* get queries */
