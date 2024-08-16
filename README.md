@@ -12,3 +12,9 @@ $ g++ -o out main.cpp algorithms.cpp
 Para correr el programa
 
 $ ./out
+
+para correr el script de los graficos
+(desde src)
+$ cd ..
+asegurarse de tener instalado python y matplotlib
+$ python figures.py
