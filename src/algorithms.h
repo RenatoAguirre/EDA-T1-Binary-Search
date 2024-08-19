@@ -39,3 +39,29 @@ int string_in_array_secuential_search(std::string array[], int size, std::string
   * @return int: the index of the string in the array ([-1] if the string isn't found)
 */
 int string_in_array_binary_search_recursive(std::string sorted_array[], int low, int size, std::string key);
+
+
+/*
+* The merge function is a helper function for the mergeSort function.
+* It merges two subarrays of arr[].
+* First subarray is arr[left..half]
+* Second subarray is arr[half+1..right]
+* @params std::string arr[]: the array of strings to merge
+* @params int left: the left index of the array
+* @params int half: the middle index of the array
+* @params int right: the right index of the array
+*/
+void merge(std::string arr[], int left, int half, int right);
+
+
+
+
+/*
+* The mergeSort function is a recursive function that sorts the array of strings.
+* It divides the array into two halves, calls itself for the two halves, and then merges the two halves.
+* @params std::string arr[]: the array of strings to sort
+* @params int left: the left index of the array
+* @params int right: the right index of the array
+*/
+void mergeSort(std::string arr[], int left, int right);
+

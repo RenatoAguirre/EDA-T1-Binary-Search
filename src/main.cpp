@@ -146,7 +146,7 @@ void run_and_time_binary_search(const int DICTIONARY_SIZE, std::string query_arr
   std::cout << "Sorting dictionary" << std::to_string(DICTIONARY_SIZE) << std::endl;
   auto sort_start = std::chrono::high_resolution_clock::now();
 
-  std::sort(dictionary_array, dictionary_array + DICTIONARY_SIZE);
+  mergeSort(dictionary_array, 0, DICTIONARY_SIZE - 1);
   
   auto sort_end = std::chrono::high_resolution_clock::now();
   auto sort_duration = std::chrono::duration_cast<std::chrono::milliseconds>(sort_end - sort_start);
