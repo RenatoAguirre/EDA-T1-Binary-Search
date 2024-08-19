@@ -117,7 +117,6 @@ plt.plot(data["n"], data["sequential_search"], label="sequential_search")
 plt.legend()
 plt.xlabel("n")
 plt.ylabel("time (ms)")
-plt.yticks([0, 500000, 1000000, 1500000, 2000000])
 plt.title("Binary search vs Sequential search")
 plt.show()
 

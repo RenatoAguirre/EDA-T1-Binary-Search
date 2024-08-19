@@ -16,5 +16,8 @@ $ ./out
 para correr el script de los graficos
 (desde src)
 $ cd ..
+
+$ cd figures
+
 asegurarse de tener instalado python y matplotlib
 $ python figures.py
